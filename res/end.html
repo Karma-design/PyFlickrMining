@@ -1,0 +1,42 @@
+
+			var donnees1 = $.parseJSON(donnees);
+					$.each(donnees1, function(i,item){
+                        ryan.createFlickrMarker(i,item.latitude,item.longitude, false,item.color, item.id, item.url, item.user); 
+                    });
+			var msg1 = $.parseJSON(msg);
+                    $.each(msg1, function(i,item){
+                        ryan.createFlickrMarker(i,item.latitude,item.longitude, true, item.color, item.id, item.url, item.user); 
+                    });
+        }
+                       
+        //Function that gets run when the document loads
+        ryan.initialize = function()
+        {
+		
+            var latlng = new google.maps.LatLng(45.763811,4.836768); //(34.0194543,-118.4911912);
+            var myOptions = {
+                zoom: 12,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+           
+            //Sample call for yelp data for cafe's
+            ryan.getFlickr('bus');
+        }
+    </script>
+</head>
+
+<body onload="ryan.initialize()">
+    <!-- side panel div container -->
+   <!-- <div style="position:absolute; width:380px; height: 100%; overflow:auto; float:left; padding-left:10px; padding-right:10px;">
+        <h1>Flickr API</h1>
+        <input type="checkbox" id="toggleFlickr" onClick="ryan.toggleArrayLayer(flickr)" checked> flickr layer
+    </div>-->
+    <!-- map div container -->
+	
+    <div id="map_canvas" style="height:100%; margin-left:0px;"></div>
+
+</body>
+</html>
+

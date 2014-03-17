@@ -1,4 +1,4 @@
 PyFlickrMining
 ==============
 
-Data mining using Python (Scikit-learn) on Flickr data
+Data mining using Python on Flickr data
