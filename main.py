@@ -7,9 +7,9 @@ print(__doc__)
 #HOW TO USE :
 # 1.Set the input and output filenames
 input_filename = 'lyon_cleaned_url_100' ##possible values : 'lyon_cleaned','suburb_cleaned','all_cleaned'
-output_filename = 'clustering'
+output_filename = 'clustering_v2'
 #Set the pictures ratio : 1/(pictures ratio) pictures are displayed
-pictRatio = 10 
+pictRatio = 15
 
 # 2.Comment the ununsed code (MeanShift or Kmeans, with plot)
 # 3.If you use KMeans, don't forget to set the number of clusters
@@ -36,7 +36,7 @@ urlIdx = 5
 from sklearn.cluster import MeanShift
 
 # The following bandwidth can be automatically detected using
-bandwidth = 0.001
+bandwidth = 0.0022
 
 ms = MeanShift(bandwidth=bandwidth,bin_seeding=True, cluster_all=False, min_bin_freq=15)
 X = Xa[:, 0:2]
